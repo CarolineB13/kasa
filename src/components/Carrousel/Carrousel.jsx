@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/carrousel.css'; 
 
 const Carrousel = ({ pictures }) => {
@@ -26,10 +28,10 @@ const Carrousel = ({ pictures }) => {
       {pictures.length > 1 && (
         <>
           <button className="carrousel-button prev-button" onClick={handlePrevClick}>
-            <img src="/path/to/prev-arrow.png" alt="Previous" />
+          <FontAwesomeIcon icon={faChevronLeft} />
           </button>
           <button className="carrousel-button next-button" onClick={handleNextClick}>
-            <img src="/path/to/next-arrow.png" alt="Next" />
+          <FontAwesomeIcon icon={faChevronRight} />
           </button>
           <div className="carrousel-indicator">
             {currentIndex + 1} / {pictures.length}
