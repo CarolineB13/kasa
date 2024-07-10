@@ -1,14 +1,16 @@
 .carrousel-container {
     position: relative;
-    max-width: 600px; /* Ajustez cette valeur selon vos besoins */
+    width: 1240px;
+    height:415px;
     margin: auto;
   }
   
   .carrousel-image {
     width: 100%;
-    height: auto;
-    display: block;
-  }
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
   
   .carrousel-button {
     position: absolute;
@@ -20,25 +22,24 @@
   }
   
   .prev-button {
-    left: 10px;
+    left: 20px;
   }
   
   .next-button {
-    right: 10px;
+    right: 20px;
   }
   
-  .carrousel-button img {
-    width: 30px; /* Ajustez la taille des flèches selon vos besoins */
-    height: 30px;
+  .carrousel-button {
+    font-size: 80px;
+    color: #FFFFFF;
+
   }
   
   .carrousel-indicator {
     position: absolute;
-    bottom: 10px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
+    font-size: 18px;
+}

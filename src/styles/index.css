@@ -2,20 +2,34 @@
 body {
 
   font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  height: 100%;
+  box-sizing: border-box;
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1240px;
+  margin: auto;
+}
+
+.main {
+  flex: 1;
+
+}
+
 header {
   display: flex;
-  max-width: 1240px;
-  max-height: 68px;
   justify-content: space-between;
-  margin: 45px auto;
-
+  margin: 45px 0;
 }
 
 header nav {
   display: flex;
   align-items: center;
   gap: 20px;
+  font-size: 24px;
 }
 
 header nav a.active-link {
@@ -23,17 +37,10 @@ header nav a.active-link {
   
 }
 
-
-
 .banner-common {
-  max-width: 1240px;
-  margin: 43px auto;
   border-radius: 25px;
   background-position: center;
-  background-size: cover;
   height: 223px;
-  width: 100%;
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,16 +66,16 @@ header nav a.active-link {
 
 .home {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 60px;
   justify-content: center;
   align-items: center;
   max-width: 1240px;
-  margin: auto;
   background-color: #F6F6F6;
   border-radius: 25px;
   justify-items: center;
   padding: 50px;
+  margin-top: 45px;
 }
 
 .card {
@@ -98,27 +105,151 @@ header nav a.active-link {
   text-align: left;
   color: #fff;
   width: 50%;
+}
+.logement-details-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
 
+.logement-details h1 {
+  font-size: 36px;
+  line-height: 51.34px;
+  color: #FF6060;
+}
 
+.logement-details p {
+  font-size: 18px;
+  line-height: 25.67px;
+}
+
+.logement-details-content .tags {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 20px 0px 25px;
+}
+
+.logement-details-content ul li {
+  height: 25px;
+  border-radius: 10px;
+  background-color: #FF6060;
+  font-size: 14px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 5px 35px;
+}
+
+.host-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+.host-details img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+.host {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+.host p {
+    color: #FF6060;
+}
+.rating {
+  width: 196px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.star-filled {
+  color: #FF6060;
+}
+
+.star-empty {
+  color: #E3E3E3;
+}
+
+.description-equipements {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.description-equipements h3 {
+  font-size: 24px;
+  width: 582px;
+  height: 54PX;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FF6060;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 700;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0 25px 0 15px;
+}
+
+.description-equipements p {
+  width: 582px;
+  border-radius: 5px;
+  background: #F6F6F673;
+  font-size: 18px;
+  line-height: 25.67px;
+  padding: 20px 15px;
+
+}
+
+.description-equipements ul {
+  width: 582px;
+  border-radius: 5px;
+  background: #F6F6F673;
+  font-size: 18px;
+  line-height: 25.67px;
+  padding: 20px 15px;
+}
+.toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.open {
+  transform: rotate(180deg);
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.content.open {
+  max-height: 500px;
+  opacity: 1;
+  
 }
 
 footer {
   background-color: #000;
   color: #fff;
   align-items: center;
-  padding: 20px;
   height: 209px;
   gap: 45px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  justify-content: flex-end;
+  margin-top: 50px;
+  padding-bottom: 30px;
 }
 
-footer img {
-  width: 150px;
-  height: 50px;
- 
-}
+
 
 .Error-page {
 
@@ -126,17 +257,16 @@ footer img {
 
 }
 
-.Error-page h1 {
-  font-family: Montserrat;
+.Error-page h2 {
   font-size: 288px;
   font-weight: 700;
-  line-height: 410.69px;
   text-align: center;
+  margin-top: -50px;
   
 }
 
 .Error-page p {
-  font-family: Montserrat;
+  
   font-size: 36px;
   font-weight: 500;
   line-height: 51.34px;
@@ -153,5 +283,5 @@ footer img {
   justify-content: center;
   color: #000000;
   text-decoration: underline;
-  margin: 150px auto;
+  margin: 120px auto;
 }
