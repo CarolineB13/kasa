@@ -1,4 +1,3 @@
-
 import logo from '../../assets/logos/LOGO_footer.png'
 
 function Footer () {

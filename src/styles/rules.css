@@ -1,0 +1,6 @@
+.rules-container {
+    display: flex;
+    flex-direction: column;
+    width: 1023px;
+    margin: 30px auto 0;
+}

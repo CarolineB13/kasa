@@ -1,45 +1,6 @@
 .carrousel-container {
-    position: relative;
-    width: 1240px;
-    height:415px;
-    margin: auto;
-  }
-  
-  .carrousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 25px;
-}
-  
-  .carrousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .prev-button {
-    left: 20px;
-  }
-  
-  .next-button {
-    right: 20px;
-  }
-  
-  .carrousel-button {
-    font-size: 80px;
-    color: #FFFFFF;
-
-  }
-  
-  .carrousel-indicator {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 18px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }

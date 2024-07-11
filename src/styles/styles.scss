@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+// Variables
+$primary-color: #FF6060;
+$secondary-color: #FFFFFF;
+$background-color: #F6F6F6;
+$font-family: 'Montserrat', sans-serif;
+$font-size-base: 1.125rem; // 18px
+$font-size-large: 1.5rem; // 24px
+$font-size-small: 0.875rem; // 14px
+
+// Mixins
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; // Définit la base pour les unités rem
+}
+
+body {
+  font-family: $font-family;
+  font-size: 1.5rem; // Équivaut à 24px
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  width: 77.5rem; // 1240px / 16 = 77.5rem
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.8125rem auto; // 45px / 16 = 2.8125rem
+  width: 77.5rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; // 20px / 16 = 1.25rem
+  font-size: 1.5rem;
+
+  a.active-link {
+    text-decoration: underline;
+  }
+}
+
+.banner-common {
+  @include border-radius(1.5625rem); // 25px / 16 = 1.5625rem
+  background-position: center;
+  height: 13.9375rem; // 223px / 16 = 13.9375rem
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/banner_home.png');
+  box-shadow: 0px 0.25rem 0.25rem 0px #00000040; // 4px / 16 = 0.25rem
+}
+
+.banner_about {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/images/banner_about.png');
+}
+
+.banner h2 {
+  font-size: 3rem; // 48px / 16 = 3rem
+  font-weight: 700;
+  line-height: 4.2778125rem; // 68.45px / 16 = 4.2778125rem
+  text-align: left;
+  color: #fff;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(21.25rem, 1fr)); // 340px / 16 = 21.25rem
+  grid-gap: 3.75rem; // 60px / 16 = 3.75rem
+  justify-content: center;
+  align-items: center;
+  max-width: 77.5rem;
+  background-color: $background-color;
+  @include border-radius(1.5625rem);
+  padding: 3.125rem; // 50px / 16 = 3.125rem
+  margin: 2.8125rem auto;
+}
+
+.card {
+  position: relative;
+  width: 21.25rem;
+  height: 21.25rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    @include border-radius(1.25rem); // 20px / 16 = 1.25rem
+    object-fit: cover;
+    filter: brightness(65%);
+  }
+
+  h2 {
+    margin: 1.25rem;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.125rem; // 18px / 16 = 1.125rem
+    font-weight: 700;
+    line-height: 1.604375rem; // 25.67px / 16 = 1.604375rem
+    text-align: left;
+    color: #fff;
+    width: 50%;
+  }
+}
+
+// Carrousel
+.carrousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+// Slideshow
+.slideshow-container {
+  position: relative;
+  width: 77.5rem; // 1240px / 16 = 77.5rem
+  height: 25.9375rem; // 415px / 16 = 25.9375rem
+  margin: auto;
+
+  .slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include border-radius(1.5625rem); // 25px / 16 = 1.5625rem
+  }
+
+  .slideshow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 5rem; // 80px / 16 = 5rem
+    color: $secondary-color;
+
+    &.prev-button {
+      left: 1.25rem; // 20px / 16 = 1.25rem
+    }
+
+    &.next-button {
+      right: 1.25rem;
+    }
+  }
+
+  .slideshow-indicator {
+    position: absolute;
+    bottom: 1.5625rem; // 25px / 16 = 1.5625rem
+    left: 50%;
+    transform: translateX(-50%);
+    color: $secondary-color;
+    font-size: 1.125rem; // 18px / 16 = 1.125rem
+  }
+}
+
+// Logement Details
+.logement-details-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem; // 40px / 16 = 2.5rem
+}
+
+.logement-details h1 {
+  font-size: 2.25rem; // 36px / 16 = 2.25rem
+  line-height: 3.20875rem; // 51.34px / 16 = 3.20875rem
+  color: $primary-color;
+}
+
+.logement-details p {
+  font-size: 1.125rem;
+  line-height: 1.604375rem;
+}
+
+.logement-details-content .tags {
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem; // 10px / 16 = 0.625rem
+  margin: 1.25rem 0 1.5625rem; // 20px / 16 = 1.25rem, 25px / 16 = 1.5625rem
+}
+
+.logement-details-content ul li {
+  height: 1.5625rem; // 25px / 16 = 1.5625rem
+  @include border-radius(0.625rem); // 10px / 16 = 0.625rem
+  background-color: $primary-color;
+  font-size: 0.875rem; // 14px / 16 = 0.875rem
+  color: $secondary-color;
+  display: flex;
+  align-items: center;
+  padding: 0.3125rem 2.1875rem; // 5px / 16 = 0.3125rem, 35px / 16 = 2.1875rem
+}
+
+.host-details {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-direction: column;
+
+  .host {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    width: 10.4375rem; // 167px / 16 = 10.4375rem
+
+    p {
+      color: $primary-color;
+      text-align: right;
+    }
+
+    img {
+      width: 4rem; // 64px / 16 = 4rem
+      height: 4rem;
+      @include border-radius(50%);
+    }
+  }
+
+  .rating {
+    width: 12.25rem; // 196px / 16 = 12.25rem
+    display: flex;
+    justify-content: space-around;
+
+    .star-filled {
+      color: $primary-color;
+    }
+
+    .star-empty {
+      color: #E3E3E3;
+    }
+  }
+}
+
+.description-equipements {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.125rem;
+
+  .collapse-header {
+    font-size: 1.5rem;
+    width: 36.375rem; // 582px / 16 = 36.375rem
+    height: 3.375rem; // 54px / 16 = 3.375rem
+    display: flex;
+    justify-content: space-between;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-weight: 700;
+    align-items: center;
+    @include border-radius(0.3125rem); // 5px / 16 = 0.3125rem
+    padding: 0 1.5625rem 0 0.9375rem; // 25px / 16 = 1.5625rem, 15px / 16 = 0.9375rem
+  }
+
+  .collapse-content {
+    width: 36.375rem;
+    @include border-radius(0.3125rem);
+    background: #F6F6F673;
+    font-size: 1.125rem;
+    line-height: 1.604375rem;
+    padding: 1.25rem 0.9375rem; // 20px / 16 = 1.25rem, 15px / 16 = 0.9375rem
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+
+    &.open {
+      max-height: 31.25rem; // 500px / 16 = 31.25rem
+      opacity: 1;
+    }
+  }
+}
+
+// Collapse
+.collapse {
+  margin-bottom: 1.875rem; // 30px / 16 = 1.875rem
+
+  .collapse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-size: 1.5rem;
+    font-weight: 700;
+    @include border-radius(0.3125rem);
+    padding: 0 1.5625rem 0 0.9375rem;
+    cursor: pointer;
+    height: 3.375rem;
+
+    .collapse-icon {
+      transition: transform 0.3s ease;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    background: #F6F6F673;
+    font-size: 1.125rem;
+    line-height: 1.604375rem;
+    @include border-radius(0.3125rem);
+    padding: 0 0.9375rem;
+
+    &.open {
+      max-height: 31.25rem; // Ajustez cette valeur en fonction du contenu
+      opacity: 1;
+      padding: 1.25rem 0.9375rem;
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: #000;
+  color: #fff;
+  align-items: center;
+  height: 13.0625rem; // 209px / 16 = 13.0625rem
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.875rem;
+  justify-content: flex-end;
+  gap: 2.8125rem; // 45px / 16 = 2.8125rem
+}
+
+// Error Page
+.Error-page {
+  color: $primary-color;
+
+  h2 {
+    font-size: 18rem; // 288px / 16 = 18rem
+    font-weight: 700;
+    text-align: center;
+    margin-top: -3.125rem; // -50px / 16 = -3.125rem
+  }
+
+  p {
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 3.20875rem;
+    text-align: center;
+  }
+
+  a {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.604375rem;
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    text-decoration: underline;
+    margin: 7.5rem auto; // 120px / 16 = 7.5rem
+  }
+}
+
+// Rules
+.rules-container {
+  display: flex;
+  flex-direction: column;
+  width: 63.9375rem; // 1023px / 16 = 63.9375rem
+  margin: 1.875rem auto 0; // 30px / 16 = 1.875rem
+}
