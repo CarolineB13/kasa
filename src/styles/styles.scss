@@ -30,6 +30,8 @@ body {
   font-size: 1.5rem; // Équivaut à 24px
   height: 100%;
   box-sizing: border-box;
+  width: 1240px;
+  margin: auto;
 }
 
 .wrapper {
@@ -40,15 +42,14 @@ body {
 
 .main {
   flex: 1;
-  width: 77.5rem; // 1240px / 16 = 77.5rem
   margin: auto;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  margin: 2.8125rem auto; // 45px / 16 = 2.8125rem
-  width: 77.5rem;
+  margin: 2.8125rem 0;
+
 }
 
 nav {
@@ -385,4 +386,16 @@ footer {
   flex-direction: column;
   width: 63.9375rem; // 1023px / 16 = 63.9375rem
   margin: 1.875rem auto 0; // 30px / 16 = 1.875rem
+}
+
+// Media Queries
+@media (max-width: 768px) {
+
+
+}
+
+@media (max-width: 375px) {
+
+
+
 }
