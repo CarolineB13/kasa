@@ -123,7 +123,6 @@ nav {
     bottom: 0;
     font-size: 1.125rem; // 18px / 16 = 1.125rem
     font-weight: 700;
-    line-height: 1.604375rem; // 25.67px / 16 = 1.604375rem
     text-align: left;
     color: #fff;
     width: 50%;
@@ -190,7 +189,6 @@ nav {
 
 .logement-details h1 {
   font-size: 2.25rem; // 36px / 16 = 2.25rem
-  line-height: 3.20875rem; // 51.34px / 16 = 3.20875rem
   color: $primary-color;
 }
 
@@ -280,7 +278,6 @@ nav {
     @include border-radius(0.3125rem);
     background: #F6F6F673;
     font-size: 1.125rem;
-    line-height: 1.604375rem;
     padding: 1.25rem 0.9375rem; // 20px / 16 = 1.25rem, 15px / 16 = 0.9375rem
     max-height: 0;
     overflow: hidden;
@@ -327,7 +324,6 @@ nav {
     opacity: 0;
     background: #F6F6F673;
     font-size: 1.125rem;
-    line-height: 1.604375rem;
     @include border-radius(0.3125rem);
     padding: 0 0.9375rem;
 
@@ -366,14 +362,12 @@ footer {
   p {
     font-size: 2.25rem;
     font-weight: 500;
-    line-height: 3.20875rem;
     text-align: center;
   }
 
   a {
     font-size: 1.125rem;
     font-weight: 500;
-    line-height: 1.604375rem;
     display: flex;
     justify-content: center;
     color: #000000;
@@ -524,6 +518,11 @@ font-size: 12px;
 .logement-details-container {
   flex-direction: column; 
   margin-bottom: 20px;
+  margin-top: 20px;
+  .logement-details-content h1 {
+    font-size: 18px;
+  
+  }
   .logement-details-content ul li {
     font-size: 10px;
     width: 84px;
