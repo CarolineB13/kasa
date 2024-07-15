@@ -30,7 +30,7 @@ body {
   font-size: 1.5rem; // Équivaut à 24px
   height: 100%;
   box-sizing: border-box;
-  width: 1240px;
+  max-width: 1240px;
   margin: auto;
 }
 
@@ -47,10 +47,11 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
   margin: 2.8125rem 0;
-
+  justify-content: space-between;
+  
 }
+
 
 nav {
   display: flex;
@@ -70,6 +71,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 1240px;
+  margin: auto;
 }
 
 .banner {
@@ -84,7 +87,6 @@ nav {
 .banner h2 {
   font-size: 3rem; // 48px / 16 = 3rem
   font-weight: 700;
-  line-height: 4.2778125rem; // 68.45px / 16 = 4.2778125rem
   text-align: left;
   color: #fff;
 }
@@ -342,12 +344,12 @@ footer {
   background-color: #000;
   color: #fff;
   align-items: center;
-  height: 13.0625rem; // 209px / 16 = 13.0625rem
   display: flex;
   flex-direction: column;
-  padding-bottom: 1.875rem;
   justify-content: flex-end;
-  gap: 2.8125rem; // 45px / 16 = 2.8125rem
+  gap: 2.8125rem;
+  padding: 50px 0 30px;
+  margin: 0 -500px
 }
 
 // Error Page
@@ -389,13 +391,186 @@ footer {
 }
 
 // Media Queries
-@media (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
+  .wrapper {
+    min-height: 150vh;
+  }
+  header {
+    width: 900px;
+    margin: 30px auto;
+   
+  }
+  .banner-common {
+    width: 900px;
+    justify-content: left;
+    padding-left: 20px;
+  }
+  .home {
+    grid-template-columns: 1fr 1fr;
+    background: none;
+    justify-items: center;
+    .card {
+      width: 400px;
+      height: 300px;
+    }
+    
+  }
+  .main {
+    width: 900px;
+    margin: auto;
+  }
+  .slideshow-container {
+    width: 900px;
+  }
+  .description-equipements {
+    flex-direction: column;
+  }
+  .collapse {
+
+  .collapse-header {
+    width: 900px;
+  }
+  .collapse-content {
+    width: 900px;
+  }
+  }
+  .Error-page {
+    margin: 100px auto; 
+    h2 {
+    font-size: 150px;
+  }
+  p {
+    font-size: 1.75rem;
+    margin-top: 50px;
+  }
+}
+}
+@media screen and (max-width: 768.9px) {
+
+  .wrapper {
+    min-height: 200vh;
+  }
+
+  header {
+
+    width: 335px;
+  }
+  header img {
+    width: 145px;
+    height: 47px;
+  }
+  nav {
+    font-size: 12px;
+  }
+  .banner-common {
+    width: 335px;
+    height: 111px;
+    justify-content: left;
+    padding-left: 20px;
+  }
+.home {
+  background: none;
+  padding: 0;
+
+  gap:20px;
+  margin: 20px auto;
+  background: none;
+}
+
+.home { 
+.card {
+width: 335px;
+height: 255px;
+}
+}
+.main {
+  width: 335px;
+
+}
+footer {
+
+gap: 20px;
+}
+footer p {
+width: 122px;
+font-size: 12px;
+}
+
+}
+@media screen and (max-width: 376px){
+
+
+  .home {
+  display: flex;
+  flex-direction: column;
+}
+.banner h2 {
+  font-size: 24px;
+  width: 225px;
+}
+.logement-details {
+  .slideshow-container {
+  width: 335px;
+  height: 225px;
+    .slideshow-button {
+    font-size: 24px;
+  }
+    .slideshow-indicator {
+    opacity: 0;
+  }
+}
+
+.logement-details-container {
+  flex-direction: column; 
+  margin-bottom: 20px;
+  .logement-details-content ul li {
+    font-size: 10px;
+    width: 84px;
+    padding: 0;
+    justify-content: center;
+  }
+  .host-details {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    .host { 
+      width: 135px;
+      p {
+       
+        font-size: 12px;
+    
+      }
+      img {
+        width: 32px;
+        height: 32px;
+      }
+      
+    }
+    .rating {
+      width: 98px;
+      font-size: 12px;
+    
+    }
+    
+  }
+}
 
 }
 
-@media (max-width: 375px) {
+.collapse {
 
+  .collapse-header {
+  width: 335px;
+  font-size: 13px;
+}
+.collapse-content {
+  width: 335px;
+ font-size: 12px;
+ p {
+   font-size: 12px;
+ }
 
+}
+}
 
 }
