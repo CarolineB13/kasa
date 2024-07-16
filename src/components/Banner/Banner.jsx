@@ -1,27 +1,21 @@
-import { useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function Banner() {
-  // État pour déterminer si la page actuelle est la page "About"
-  const [aboutPage, setAboutPage] = useState(false);
-
-  // Récupère l'objet location de React Router
-  const location = useLocation();
-
-  // Utilise un effet pour vérifier la route actuelle et mettre à jour l'état aboutPage
-  useEffect(() => {
-    if (location.pathname === '/About') {
-      setAboutPage(true);
-    } else {
-      setAboutPage(false); // Remet à false si ce n'est pas la page about
-    }
-  }, [location.pathname]); // Dépend de location.pathname pour réagir aux changements de route
-
+export default function Banner({ image, text, additionalClass }) {
   return (
-    // Applique des classes dynamiques en fonction de l'état aboutPage
-    <section className={`banner-common ${aboutPage ? 'banner_about' : 'banner'}`}>
-      {/* Affiche le titre uniquement si ce n'est pas la page about */}
-      {!aboutPage && <h2>Chez vous, partout et ailleurs</h2>}
+    <section className={`banner-common ${additionalClass}`}>
+      {image && <img src={image} alt="Banner" />}
+      {text && <h2>{text}</h2>}
     </section>
   );
 }
+
+Banner.propTypes = {
+  image: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  additionalClass: PropTypes.string,
+};
+
+Banner.defaultProps = {
+  text: '',
+  additionalClass: '',
+};
