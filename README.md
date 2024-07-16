@@ -1,23 +1,16 @@
 # Kasa
 
-Bienvenue dans le projet Kasa. Kasa est une plateforme de location de logements de courte durée. Ce projet fait partie du P7 de la formation OpenClassrooms et a pour but de créer une application React.
+Bienvenue dans le projet Kasa. Kasa est une plateforme de location d’appartements entre particuliers. 
+Il s'agit du P7 de la formation d'intégrateur Web d'OpenClassrooms qui a pour but de créer une application React.
 
 ## Aperçu
 
 [![Demo du site Kasa](http://img.youtube.com/vi/aKELLoxLfIA/0.jpg)](http://www.youtube.com/watch?v=aKELLoxLfIA)
 
-## Fonctionnalités
+## Objectifs pédagogiques
 
-- Recherche de logements
-- Réservation en ligne
-- Gestion des utilisateurs
-
-## Installation
-
-Pour installer le projet, suivez ces étapes :
-
-```bash
-git clone https://github.com/ton-utilisateur/kasa.git
-cd kasa
-npm install
-npm start
+Mettre en œuvre des animations CSS
+Développer une interface web avec Sass
+Initialiser une application avec Create React App
+Configurer la navigation entre les pages de l'application avec React Router
+Développer des éléments de l'interface d'un site web grâce à des composants React
