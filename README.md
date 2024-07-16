@@ -4,12 +4,9 @@ Bienvenue dans le projet Kasa. Kasa est une plateforme de location de logements 
 
 ## Aperçu
 
-<div align="center">
-  <video width="600" controls>
-    <source src="/src/assets/demo.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas les vidéos HTML5.
-  </video>
-</div>
+## Aperçu
+
+[![Demo du site Kasa](http://img.youtube.com/vi/ID_DE_LA_VIDEO/0.jpg)](https://youtu.be/aKELLoxLfIA)
 
 ## Fonctionnalités
 
