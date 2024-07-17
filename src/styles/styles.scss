@@ -28,28 +28,38 @@ html {
 body {
   font-family: $font-family;
   font-size: 1.5rem; // Équivaut à 24px
-  height: 100%;
   box-sizing: border-box;
-  max-width: 1240px;
-  margin: auto;
-}
-
-.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1440px;
  
 }
 
 .main {
   flex: 1;
-  margin: auto;
+  margin-left: 100px;
+  margin-right: 100px;
+
 }
 
 header {
   display: flex;
-  margin: 2.8125rem 0;
+  margin: 2.8125rem auto;
   justify-content: space-between;
-  
+  margin:50px 100px;
+
 }
 
 
@@ -104,7 +114,6 @@ nav {
   grid-gap: 3.75rem;
   justify-content: center;
   align-items: center;
-  max-width: 77.5rem;
   background-color: #F6F6F6;
   border-radius: 1.5625rem;
   padding: 3.125rem;
@@ -113,8 +122,8 @@ nav {
 
 .card {
   position: relative;
-  width: 21.25rem;
-  height: 21.25rem;
+  width: 100%;
+  height: 340px;
 
   img {
     width: 100%;
@@ -147,8 +156,7 @@ nav {
 // Slideshow
 .slideshow-container {
   position: relative;
-  width: 77.5rem; // 1240px / 16 = 77.5rem
-  height: 25.9375rem; // 415px / 16 = 25.9375rem
+  height: 26rem; 
   margin: auto;
 
   .slideshow-image {
@@ -188,6 +196,9 @@ nav {
 }
 
 // Logement Details
+.logement-details {
+  margin-bottom: 40px;
+}
 .logement-details-container {
   display: flex;
   justify-content: space-between;
@@ -201,7 +212,7 @@ nav {
 
 .logement-details p {
   font-size: 1.125rem;
-  line-height: 1.604375rem;
+  
 }
 
 .logement-details-content .tags {
@@ -232,15 +243,17 @@ nav {
     display: flex;
     align-items: center;
     gap: 0.625rem;
-    width: 10.4375rem; // 167px / 16 = 10.4375rem
+    justify-content: space-between;
+ 
 
     p {
       color: $primary-color;
       text-align: right;
+      width: 50%;
     }
 
     img {
-      width: 4rem; // 64px / 16 = 4rem
+      width: 4rem; 
       height: 4rem;
       @include border-radius(50%);
     }
@@ -265,42 +278,24 @@ nav {
   display: flex;
   justify-content: space-between;
   font-size: 1.125rem;
-
-  .collapse-header {
-    font-size: 1.5rem;
-    width: 36.375rem; // 582px / 16 = 36.375rem
-    height: 3.375rem; // 54px / 16 = 3.375rem
-    display: flex;
-    justify-content: space-between;
-    background-color: $primary-color;
-    color: $secondary-color;
-    font-weight: 700;
-    align-items: center;
-    @include border-radius(0.3125rem); // 5px / 16 = 0.3125rem
-    padding: 0 1.5625rem 0 0.9375rem; // 25px / 16 = 1.5625rem, 15px / 16 = 0.9375rem
-  }
-
-  .collapse-content {
-    width: 36.375rem;
-    @include border-radius(0.3125rem);
-    background: #F6F6F673;
-    font-size: 1.125rem;
-    padding: 1.25rem 0.9375rem; // 20px / 16 = 1.25rem, 15px / 16 = 0.9375rem
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
-    opacity: 0;
-
-    &.open {
-      max-height: 31.25rem; // 500px / 16 = 31.25rem
-      opacity: 1;
-    }
-  }
+  max-width: 100%;
+  box-sizing: border-box;
+  gap:4.6rem;
 }
+  .description-equipements p,
+.description-equipements ul {
+    max-width: 100%; /* S'assurer qu'ils ne dépassent pas la largeur du conteneur */
+    word-wrap: break-word; /* Permettre les coupures de mots pour éviter le débordement */
+    overflow-wrap: break-word; /* Une autre propriété pour s'assurer que les mots sont coupés si nécessaire */
+}
+
 
 // Collapse
 .collapse {
-  margin-bottom: 1.875rem; // 30px / 16 = 1.875rem
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+ 
 
   .collapse-header {
     display: flex;
@@ -310,10 +305,10 @@ nav {
     color: $secondary-color;
     font-size: 1.5rem;
     font-weight: 700;
-    @include border-radius(0.3125rem);
-    padding: 0 1.5625rem 0 0.9375rem;
+    @include border-radius(5px);
     cursor: pointer;
-    height: 3.375rem;
+    height: 54px;
+    padding: 10px;
 
     .collapse-icon {
       transition: transform 0.3s ease;
@@ -331,15 +326,18 @@ nav {
     opacity: 0;
     background: #F6F6F673;
     font-size: 1.125rem;
-    @include border-radius(0.3125rem);
-    padding: 0 0.9375rem;
+    @include border-radius(5px);
+    padding: 10px;
+  
 
     &.open {
-      max-height: 31.25rem; // Ajustez cette valeur en fonction du contenu
+      max-height: 31.25rem; 
       opacity: 1;
-      padding: 1.25rem 0.9375rem;
+      margin-bottom: 30px;
+     
     }
   }
+
 }
 
 // Footer
@@ -352,6 +350,10 @@ footer {
   justify-content: flex-end;
   gap: 2.8125rem;
   padding: 50px 0 30px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: auto; /* Pousse le footer vers le bas */
   
 }
 
@@ -387,52 +389,57 @@ footer {
 .rules-container {
   display: flex;
   flex-direction: column;
-  width: 63.9375rem; // 1023px / 16 = 63.9375rem
-  margin: 1.875rem auto 0; // 30px / 16 = 1.875rem
+  margin-top: 1.875rem;
+  margin-left: 6.75rem;
+  margin-right: 6.75rem;
+  
 }
 
 // Media Queries
 @media screen and (max-width: 1024px) {
 
- 
-  header {
-    width: 800px;
-    margin: 30px auto;
-   
+ header {
+  margin : 50px;
+ }
+
+ .main {
+  margin-left: 50px;
+  margin-right: 50px;
+ }
+  .main .banner-common {
+    height: 170px;
+    
+    h2 {
+        font-size: 2rem;
+        
+      }
+    
   }
-  .banner-common {
-    width: 800px;
-    justify-content: left;
-    padding-left: 20px;
-  }
+
   .home {
     grid-template-columns: 1fr 1fr;
     background: none;
     justify-items: center;
     .card {
-      width: 350px;
+      width: 100%;
       height: 230px;
     }
     
   }
-  .main {
-    width: 800px;
-    margin: auto;
+  .slideshow-container .slideshow-button {
+    font-size: 3rem;
   }
-  .slideshow-container {
-    width: 800px;
+  .logement-details-content ul li {
+    font-size: 0.7rem;
   }
   .description-equipements {
     flex-direction: column;
+    gap:0;
   }
-  .collapse {
 
-  .collapse-header {
-    width: 800px;
-  }
-  .collapse-content {
-    width: 800px;
-  }
+  .rules-container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
   .Error-page {
     margin: 100px auto; 
@@ -449,9 +456,8 @@ footer {
 
 
   header {
-
-    width: 335px;
-  }
+    margin : 20px;
+   }
   header img {
     width: 145px;
     height: 47px;
@@ -459,16 +465,20 @@ footer {
   nav {
     font-size: 12px;
   }
-  .banner-common {
-    width: 335px;
-    height: 111px;
-    justify-content: left;
-    padding-left: 20px;
+  .main .banner-common {
+    height: 110px;
+    
+    h2 {
+        font-size: 1.5rem;
+        padding-left: 20px;
+        padding-right: 80px;
+        
+      }
   }
-  .banner h2 {
-    font-size: 24px;
-    width: 225px;
-  }
+  .main {
+    margin-left: 20px;
+    margin-right: 20px;
+   }
 .home {
   
   display: flex;
@@ -482,17 +492,14 @@ footer {
 
 .home { 
 .card {
-width: 335px;
+
 height: 255px;
 }
 }
-.main {
-  width: 335px;
 
-}
 .logement-details {
   .slideshow-container {
-  width: 335px;
+
   height: 225px;
     .slideshow-button {
     font-size: 24px;
@@ -512,15 +519,14 @@ height: 255px;
   }
   .logement-details-content ul li {
     font-size: 10px;
-    width: 84px;
-    padding: 0;
-    justify-content: center;
+    padding: 0.3125rem 1rem;
+
   }
   .host-details {
     flex-direction: row-reverse;
     justify-content: space-between;
     .host { 
-      width: 135px;
+     
       p {
        
         font-size: 12px;
@@ -546,11 +552,11 @@ height: 255px;
 .collapse {
 
   .collapse-header {
-  width: 335px;
+
   font-size: 13px;
 }
 .collapse-content {
-  width: 335px;
+
  font-size: 12px;
  p {
    font-size: 12px;
@@ -558,12 +564,16 @@ height: 255px;
 
 }
 }
+.rules-container {
+  margin-left:0;
+  margin-right: 0
+}
 footer {
-
 gap: 20px;
 }
 footer p {
-width: 122px;
+padding: 0 120px;
+text-align: center;
 font-size: 12px;
 }
 
