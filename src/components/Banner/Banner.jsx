@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+
+import React from 'react';
 
 export default function Banner({ image, text, additionalClass }) {
   return (
@@ -9,13 +10,3 @@ export default function Banner({ image, text, additionalClass }) {
   );
 }
 
-Banner.propTypes = {
-  image: PropTypes.string.isRequired,
-  text: PropTypes.string,
-  additionalClass: PropTypes.string,
-};
-
-Banner.defaultProps = {
-  text: '',
-  additionalClass: '',
-};

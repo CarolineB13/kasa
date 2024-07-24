@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Host = ({ name, picture }) => {
   return (
@@ -8,5 +9,8 @@ const Host = ({ name, picture }) => {
     </div>
   );
 };
-
+Host.propTypes = {
+  name: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired
+};
 export default Host;
