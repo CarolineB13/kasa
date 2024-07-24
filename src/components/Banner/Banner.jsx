@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function Banner({ image, text, additionalClass }) {
+export default function Banner({ image = '', text = '', additionalClass = '' }) {
   return (
     <section className={`banner-common ${additionalClass}`}>
       {image && <img src={image} alt="Banner" />}
@@ -10,12 +10,7 @@ export default function Banner({ image, text, additionalClass }) {
 }
 
 Banner.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   text: PropTypes.string,
   additionalClass: PropTypes.string,
-};
-
-Banner.defaultProps = {
-  text: '',
-  additionalClass: '',
 };
